@@ -1,0 +1,2 @@
+web: bundle exec unicorn -p 5000 -E "development" -c config/unicorn.rb
+webpack: npm run webpack:dev
