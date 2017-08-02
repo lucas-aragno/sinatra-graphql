@@ -1,21 +1,17 @@
-require "trailblazer/operation"
+require "trailblazer"
+require "reform"
 
-class Todo
-  class Create < Trailblazer::Operation
-    extend ::Contract::DSL
+require_relative "../todo"
 
-    contract do
-      property :title
-      validates :title, presence: true
-    end
+class Todo::Create < Trailblazer::Operation
+  extend Contract::DSL
 
-    step Model(Todo, :new)
-    step Contract::Build()
-    step Contract::Validate()
-    failure :log_error!
-    step Contract::Persist()
+  step Model(Todo, :new)
+  step Contract::Build()
+  step Contract::Validate()
+  failure :log_error!
+  step Contract::Persist()
 
-    def log_error!(opts)
-    end
+  def log_error!(opts)
   end
 end
