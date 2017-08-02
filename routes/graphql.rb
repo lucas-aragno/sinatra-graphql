@@ -1,4 +1,4 @@
-module Todo
+module TodoApp
   module Routes
     class Graphql < Sinatra::Application
       post "/graphql" do

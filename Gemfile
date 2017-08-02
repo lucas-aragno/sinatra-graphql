@@ -7,6 +7,7 @@ gem "minitest"
 gem "unicorn", "~> 4.8.2"
 gem "graphql"
 gem "graphql-relay", "~> 0.9"
+gem "trailblazer-operation"
 
 group :development do
   gem "sqlite3"

@@ -2,12 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     bacon (1.2.0)
+    declarative (0.0.9)
     graphql (0.19.3)
     graphql-relay (0.12.0)
       graphql (~> 0.17)
     kgio (2.11.0)
     minitest (5.10.3)
     mustermann (1.0.0)
+    pipetree (0.1.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -24,6 +26,11 @@ GEM
       sinatra (>= 0.9.4)
     sqlite3 (1.3.13)
     tilt (2.0.8)
+    trailblazer-operation (0.0.13)
+      declarative
+      pipetree (>= 0.1.1, < 0.2.0)
+      uber
+    uber (0.1.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -39,6 +46,7 @@ DEPENDENCIES
   sinatra (~> 2.0.0)
   sinatra-sequel
   sqlite3
+  trailblazer-operation
   unicorn (~> 4.8.2)
 
 RUBY VERSION
