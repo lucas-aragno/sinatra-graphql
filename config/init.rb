@@ -1,5 +1,7 @@
 require "sinatra/sequel"
 require "sqlite3"
+require "reform"
+require "reform/form/dry"
 
 configure :development do
   set :database, "sqlite://db/dev.sqlite"
@@ -10,3 +12,7 @@ configure :test do
 end
 
 require_relative "../db/migrations"
+
+Reform::Form.class_eval do
+  include Reform::Form::Dry
+end

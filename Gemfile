@@ -9,6 +9,7 @@ gem "graphql"
 gem "graphql-relay", "~> 0.9"
 gem "trailblazer"
 gem "reform"
+gem "dry-validation"
 
 group :development do
   gem "sqlite3"
