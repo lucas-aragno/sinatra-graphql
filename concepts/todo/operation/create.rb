@@ -12,6 +12,6 @@ class Todo::Create < Trailblazer::Operation
   step Contract::Persist()
 
   def log_error!(options)
-    raise "Error creating Todo! #{options.inspect}"
+    raise "Error creating Todo! #{options["contract.default"].errors.inspect}"
   end
 end

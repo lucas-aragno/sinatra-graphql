@@ -7,4 +7,8 @@ class TestTodo < MiniTest::Unit::TestCase
     @last_todo = Todo.last
     assert_equal @todo.title, @last_todo.title
   end
+
+  def teardown
+    Todo.all.each { |todo| todo.destroy }
+  end
 end

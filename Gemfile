@@ -11,6 +11,7 @@ gem "trailblazer"
 gem "reform"
 gem "dry-validation"
 
-group :development do
+group :development, :test do
   gem "sqlite3"
+  gem "rake"
 end

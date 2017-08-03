@@ -12,6 +12,6 @@ class Todo::Update < Trailblazer::Operation
   step Contract::Persist()
 
   def log_error!(options)
-    raise "Error updating Todo! #{options.inspect}"
+    raise "Error updating Todo! #{options["contract.default"].errors.inspect}"
   end
 end
