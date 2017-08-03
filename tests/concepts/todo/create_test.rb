@@ -4,6 +4,7 @@ require_relative "../../../concepts/todo/operation/create"
 class TestCreateTodo < MiniTest::Unit::TestCase
   def test_create_with_title
     result = Todo::Create.({title: "test"})
+    assert Todo.last != nil
     assert result.success?
   end
 
