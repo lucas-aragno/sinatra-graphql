@@ -12,4 +12,8 @@ class TestCreateTodo < MiniTest::Unit::TestCase
     result = Todo::Create.({})
     assert result.failure?
   end
+
+  def teardown
+    Todo.all.each { |todo| todo.destroy }
+  end
 end

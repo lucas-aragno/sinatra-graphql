@@ -2,7 +2,7 @@ require "reform"
 require_relative "../todo"
 
 class Todo::Contract
-  class Create < Reform::Form
+  class Update < Reform::Form
     property :title
     property :content
 
