@@ -1,3 +1,5 @@
+require "graphql"
+
 TodoType = GraphQL::ObjectType.define do
   name 'Todo'
   description 'The todo model type'

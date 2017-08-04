@@ -46,6 +46,7 @@ GEM
     kgio (2.11.0)
     minitest (5.10.3)
     mustermann (1.0.0)
+    pg (0.21.0)
     pipetree (0.1.1)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -90,8 +91,9 @@ PLATFORMS
 DEPENDENCIES
   dry-validation
   graphql
-  graphql-relay (~> 0.9)
+  graphql-relay
   minitest
+  pg
   rake
   reform
   sinatra (~> 2.0.0)
