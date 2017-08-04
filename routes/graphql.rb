@@ -13,7 +13,7 @@ module TodoApp
           variables: query_variables,
           context: {}
         )
-        render json: result
+        result.to_json
       end
 
       private

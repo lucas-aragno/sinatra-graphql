@@ -3,8 +3,9 @@ $:.unshift File.join(File.dirname(__FILE__), "lib")
 require "rubygems"
 require "sinatra"
 
-require_relative "routes/graphql"
 require_relative "config/init"
+require_relative "routes/graphql"
+
 
 module TodoApp
   class App < Sinatra::Base

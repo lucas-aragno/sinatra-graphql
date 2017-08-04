@@ -1,10 +1,11 @@
 require "sinatra/sequel"
 require "sqlite3"
+require "pg"
 require "reform"
 require "reform/form/dry"
 
 configure :development do
-  set :database, "sqlite://db/dev.sqlite"
+  set :database, "postgres://laragno@localhost:5432/todo-sinatra"
 end
 
 configure :test do
