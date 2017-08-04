@@ -5,7 +5,7 @@ require "reform"
 require "reform/form/dry"
 
 configure :development do
-  set :database, "postgres://laragno@localhost:5432/todo-sinatra"
+  set :database, "postgres://#{ENV['DATABASE_USER']}@#{ENV['DATABASE_HOST']}:#{ENV['DATABASE_PORT']}/#{ENV['DATABASE_NAME']}"
 end
 
 configure :test do

@@ -10,6 +10,7 @@ gem "graphql-relay"
 gem "trailblazer"
 gem "reform"
 gem "dry-validation"
+gem "dotenv"
 
 group :development, :test do
   gem "sqlite3"

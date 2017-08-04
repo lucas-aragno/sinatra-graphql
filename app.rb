@@ -2,6 +2,7 @@ $:.unshift File.join(File.dirname(__FILE__), "lib")
 
 require "rubygems"
 require "sinatra"
+require 'dotenv/load'
 
 require_relative "config/init"
 require_relative "routes/graphql"
