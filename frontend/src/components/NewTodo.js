@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
+import { graphql } from 'react-apollo'
 
-export default class NewTodo extends PureComponent {
+import createTodo from '../mutations/createTodo'
+
+class NewTodo extends PureComponent {
   constructor (props) {
     super(props)
     this.state = {
@@ -9,11 +12,23 @@ export default class NewTodo extends PureComponent {
     }
 
     this.handleUpdate = ::this.handleUpdate
+    this.handleClick = ::this.handleClick
   }
 
   handleUpdate ({ target: { name, value } }) {
     this.setState({
       [name]: value
+    })
+  }
+
+  handleClick (e) {
+    e.preventDefault()
+    const { title, content } = this.state
+    this.props.mutate({
+      variables: {
+        title,
+        content
+      }
     })
   }
 
@@ -40,7 +55,10 @@ export default class NewTodo extends PureComponent {
         </div>
         <div className='w-50 center'>
           <div className='w-100'>
-            <div className='f6 fl grow no-underline pointer br-pill ph3 pv2 mb2 dib white bg-green'>
+            <div
+              className='f6 fl grow no-underline pointer br-pill ph3 pv2 mb2 dib white bg-green'
+              onClick={this.handleClick}
+            >
               New
             </div>
           </div>
@@ -49,3 +67,5 @@ export default class NewTodo extends PureComponent {
     )
   }
 }
+
+export default graphql(createTodo)(NewTodo)

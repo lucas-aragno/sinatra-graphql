@@ -1,4 +1,5 @@
 require_relative "../types/todo_type"
+require_relative "../../concepts/todo/operation/create"
 
 module TodoMutations
   UpdateTodo = GraphQL::Relay::Mutation.define do
@@ -21,7 +22,18 @@ module TodoMutations
 
     return_field :todo, TodoType
     resolve -> (args, ctx) {
-      puts "===== #{args}"
+      result = Todo::Create.({
+        title: args[:title],
+        content: args[:content]
+      })
+
+      if result.success?
+        {
+          todo: result["model"]
+        }
+      else
+        {error: "Something went wrong!"}
+      end
     }
   end
 end
