@@ -14,6 +14,7 @@ gem "dotenv"
 group :development, :test do
   gem "sqlite3"
   gem "rake"
+  gem "sinatra-reloader"
 end
 
 group :production do

@@ -1,5 +1,6 @@
 require_relative "../types/todo_type"
 require_relative "../../concepts/todo/operation/create"
+require_relative "../../concepts/todo/operation/delete"
 
 module TodoMutations
   UpdateTodo = GraphQL::Relay::Mutation.define do
@@ -20,7 +21,7 @@ module TodoMutations
     input_field :id, !types.ID
 
     return_field :todo, TodoType
-    resolve -> (args, ctx) {
+    resolve -> (x, args, ctx) {
       result = Todo::Delete.({
         id: args[:id]
       })
@@ -42,7 +43,7 @@ module TodoMutations
     input_field :content, types.String
 
     return_field :todo, TodoType
-    resolve -> (args, ctx) {
+    resolve -> (x, args, ctx) {
       result = Todo::Create.({
         title: args[:title],
         content: args[:content]

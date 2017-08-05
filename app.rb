@@ -2,7 +2,11 @@ $:.unshift File.join(File.dirname(__FILE__), "lib")
 
 require "rubygems"
 require "sinatra"
+require "sinatra/reloader" if ENV["development"]
 require 'dotenv/load'
+
+puts "======= ENV ========="
+puts ENV["development"]
 
 require_relative "config/init"
 require_relative "routes/graphql"

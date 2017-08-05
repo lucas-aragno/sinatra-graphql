@@ -18,6 +18,7 @@ const TodoList = ({
           <li key={todo.id}>
             <TodoListItem
               id={todo.id}
+              refetch={refetch}
               title={todo.title}
               content={todo.content}
             />
