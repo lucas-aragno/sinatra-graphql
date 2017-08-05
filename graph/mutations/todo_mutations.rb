@@ -17,7 +17,7 @@ module TodoMutations
   DeleteTodo = GraphQL::Relay::Mutation.define do
     name 'DeleteTodo'
     description 'Deletes a Todo'
-    input_field :id
+    input_field :id, !types.ID
 
     return_field :todo, TodoType
     resolve -> (args, ctx) {

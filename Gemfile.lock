@@ -40,9 +40,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.11.0)
-    graphql (0.19.4)
-    graphql-relay (0.12.0)
-      graphql (~> 0.17)
+    graphql (1.6.6)
     inflecto (0.0.2)
     kgio (2.11.0)
     minitest (5.10.3)
@@ -92,8 +90,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   dry-validation
-  graphql
-  graphql-relay
+  graphql (~> 1.6.6)
   minitest
   pg
   rake
