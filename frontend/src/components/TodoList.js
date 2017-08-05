@@ -9,7 +9,10 @@ const TodoList = ({
   }
 }) => (
   <div>
-    <button onClick={() => refetch()}>
+    <button
+      className='f6 grow no-underline br-pill bn pointer ph3 pv2 mb2 dib white bg-dark-blue'
+      onClick={() => refetch()}
+    >
       Refresh
     </button>
     <ul>
