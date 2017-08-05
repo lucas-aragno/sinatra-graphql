@@ -1,12 +1,9 @@
 import React from 'react'
-import { graphql } from 'react-apollo'
-import getTodos from '../query/getTodos'
+import TodoListItem from './TodoListItem'
 
 const TodoList = ({
-  data: {
-    todos,
-    refetch
-  }
+  todos,
+  refetch
 }) => (
   <div>
     <button
@@ -15,11 +12,15 @@ const TodoList = ({
     >
       Refresh
     </button>
-    <ul>
+    <ul className='list'>
       {
         (todos || []).map(todo => (
-          <li>
-            {todo.title}
+          <li key={todo.id}>
+            <TodoListItem
+              id={todo.id}
+              title={todo.title}
+              content={todo.content}
+            />
           </li>
         ))
       }
@@ -27,4 +28,4 @@ const TodoList = ({
   </div>
 )
 
-export default graphql(getTodos)(TodoList)
+export default TodoList

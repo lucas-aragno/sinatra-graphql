@@ -24,11 +24,14 @@ class NewTodo extends PureComponent {
   handleClick (e) {
     e.preventDefault()
     const { title, content } = this.state
+    const { refetch } = this.props
     this.props.mutate({
       variables: {
         title,
         content
       }
+    }).then(res => {
+      refetch()
     })
   }
 
